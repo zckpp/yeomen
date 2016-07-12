@@ -1,0 +1,70 @@
+<div class="container" ng-controller="mainController">
+    <div class="row">
+
+      <div class="Age col-md-3 col-sm-3">
+        <i class="fa fa-smile-o"></i>
+        <span>{{achivement.age}}</span>
+        <button ng-click="addup1()">click me</button>
+      </div>
+
+      <div class="Code col-md-3 col-sm-3">
+        <i class="fa fa-code"></i>
+        <span>{{achivement.code}}</span>
+        <button ng-click="addup2()">click me</button>
+      </div>
+
+      <div class="Hour col-md-3 col-sm-3">
+        <i class="fa fa-square-o"></i>
+        <span>{{achivement.hour}}</span>
+        <button ng-click="addup3()">click me</button>
+      </div>
+
+      <div class="Project col-md-3 col-sm-3">
+        <i class="fa fa-trophy"></i>
+        <span>{{achivement.project}}</span>
+        <button ng-click="addup4()">click me</button>
+      </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <h2>MY SKILLS</h2>
+
+    <div class="skillShow">
+      
+      <ul class="Skill list-group">
+        <li ng-repeat="skill in newskills" class="list-group-item">
+          {{skill}}
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 col-sm-6">
+        <h2>Skills List</h2>
+        <select  multiple ng-model="chosen" ng-options="x for x in skills" class="chooseList"></select>
+      </div> 
+
+      <div class="col-md-2 col-xs-0">
+        <img class="forward" src="images/forward.png">
+      </div> 
+
+      <div class="col-md-3 col-sm-6">
+        <h2>Skills Chosen</h2>
+        <ul class="chosenList list-group">
+          <li ng-repeat="choice in chosen" class="list-group-item">
+            {{choice}}
+          </li>
+        </ul>
+
+        <button ng-click="choose()" class="chooseButton btn btn-primary">Choose</button>
+      </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+</div>

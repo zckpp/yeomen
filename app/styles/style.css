@@ -1,0 +1,48 @@
+.row{
+	display: block;
+}
+
+.Age{
+	display: block;
+}
+
+span{
+	display: block;
+}
+
+.Skill li{
+	display: inline;
+	margin-right: 2px;
+}
+.Skill{
+	padding-top: 15px;
+}
+
+.chooseButton{
+	display: block;
+}
+
+.chooseList{
+	min-height:200px; 
+}
+
+.chosenList{
+	min-height:150px;
+}
+
+.skillShow{
+	background-color: #F0FFFF;
+	min-height: 50px;
+}
+
+.forward{
+    width: 100%;
+    height: auto;
+    padding-top: 40px;
+}
+
+@media screen and (max-width: 993px){
+	.forward {
+		display: none;
+	}
+}
