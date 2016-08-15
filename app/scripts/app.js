@@ -1,5 +1,7 @@
 'use strict';
 
+(function() {
+
 /**
  * @ngdoc overview
  * @name newapApp
@@ -21,6 +23,7 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider.when('/', {
+      // template: '<hero-detail hero='{}'></hero-detail>'
         templateUrl: 'views/main.html',
         controller: 'mainController'
       })
@@ -28,3 +31,7 @@ angular
         redirectTo: '/'
       });
   });
+
+var x = 1;
+
+})();

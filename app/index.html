@@ -17,12 +17,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body ng-app="mainApp">
-	
   
-  <div class="container">
-    <div ng-view=""></div>
+  <div class="container" ng-controller="mainController as mc">
+      <hero></hero>
+      <div ng-controller="textC as af">
+        <test-name name="af.name"></test-name>
+      </div>
   </div>
-
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
@@ -41,8 +42,10 @@
 <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
+
+<!--     <script src="scripts/app.js"></script> -->   
+    <script src="scripts/comp.js"></script>
+    <script src="scripts/comp1.js"></script>
     <!-- endbuild -->
 </body>
 </html>

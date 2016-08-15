@@ -10,7 +10,7 @@
 'use strict';
 
 
-    angular.module("mainApp")
+    angular.module('mainApp')
            .controller('mainController', function mainController($scope){
 
         $scope.achivement = 
@@ -28,29 +28,28 @@
 
         $scope.addup1 = function() {
           $scope.achivement.age += 1;
-          console.log($scope.chosen);
-        }
+        };
 
         $scope.addup2 = function() {
           $scope.achivement.code += 10;
-        }
+        };
 
         $scope.addup3 = function() {
           $scope.achivement.hour += 10;
-        }
+        };
 
         $scope.addup4 = function() {
           $scope.achivement.project += 1;
-        }
+        };
         $scope.choose = function(){
           // filter out duplicate chosen skills
             var temp = $scope.chosen;
             temp = temp.filter(function(val) {
-              return $scope.newskills.indexOf(val) == -1;
+              return $scope.newskills.indexOf(val) === -1;
             });
             // console.log(temp);
             $scope.newskills = $scope.newskills.concat(temp);
-        }
+        };
 
-      });
+    });
 
