@@ -18,11 +18,12 @@
 </head>
 <body ng-app="mainApp">
   
-  <div class="container" ng-controller="mainController as mc">
-      <hero></hero>
-      <div ng-controller="textC as af">
-        <test-name name="af.name"></test-name>
-      </div>
+  <div class="container">
+      <hero hero-changer></hero>
+  </div>
+
+  <div class="container">
+    <test-name name="name" address="'asdads'"></test-name> 
   </div>
 
 <!-- build:js(.) scripts/vendor.js -->

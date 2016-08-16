@@ -1,28 +1,32 @@
 <div class="container">
+
+    <ng-transclude>
+    </ng-transclude>
+    
     <div class="row">
 
       <div class="Age col-md-3 col-sm-3">
         <i class="fa fa-smile-o"></i>
-        <span>{{achivement.age}}</span>
-        <button ng-click="addup1()">click me</button>
+        <span>{{$ctrl.achivement.age}}</span>
+        <button ng-click="$ctrl.addup1()">click me</button>
       </div>
 
       <div class="Code col-md-3 col-sm-3">
         <i class="fa fa-code"></i>
-        <span>{{achivement.code}}</span>
-        <button ng-click="addup2()">click me</button>
+        <span>{{$ctrl.achivement.code}}</span>
+        <button ng-click="$ctrl.addup2()">click me</button>
       </div>
 
       <div class="Hour col-md-3 col-sm-3">
         <i class="fa fa-square-o"></i>
-        <span>{{achivement.hour}}</span>
-        <button ng-click="addup3()">click me</button>
+        <span>{{$ctrl.achivement.hour}}</span>
+        <button ng-click="$ctrl.addup3()">click me</button>
       </div>
 
       <div class="Project col-md-3 col-sm-3">
         <i class="fa fa-trophy"></i>
-        <span>{{achivement.project}}</span>
-        <button ng-click="addup4()">click me</button>
+        <span>{{$ctrl.achivement.project}}</span>
+        <button ng-click="$ctrl.addup4()">click me</button>
       </div>
 
     </div>
@@ -36,7 +40,7 @@
     <div class="skillShow">
       
       <ul class="Skill list-group">
-        <li ng-repeat="skill in newskills" class="list-group-item">
+        <li ng-repeat="skill in $ctrl.newskills" class="list-group-item">
           {{skill}}
         </li>
       </ul>
@@ -45,7 +49,7 @@
     <div class="row">
       <div class="col-md-2 col-sm-6">
         <h2>Skills List</h2>
-        <select  multiple ng-model="chosen" ng-options="x for x in skills" class="chooseList"></select>
+        <select  multiple ng-model="chosen" ng-options="x for x in $ctrl.skills" class="chooseList"></select>
       </div> 
 
       <div class="col-md-2 col-xs-0">
@@ -55,12 +59,12 @@
       <div class="col-md-3 col-sm-6">
         <h2>Skills Chosen</h2>
         <ul class="chosenList list-group">
-          <li ng-repeat="choice in chosen" class="list-group-item">
+          <li ng-repeat="choice in $ctrl.chosen" class="list-group-item">
             {{choice}}
           </li>
         </ul>
 
-        <button ng-click="choose()" class="chooseButton btn btn-primary">Choose</button>
+        <button ng-click="$ctrl.choose()" class="chooseButton btn btn-primary">Choose</button>
       </div>
     </div>
     

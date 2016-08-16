@@ -2,57 +2,62 @@
 
 
 angular.module('mainApp' ,[])
-       .controller('mainController', function mainController($scope){
+       .component('hero', {
+		templateUrl: 'views/main.html',
+		transclude: true,
+		controller:  function (){
+			var $ctrl = this;
 
-	        $scope.achivement = 
-	          { 
-	            age: 24, 
-	            code: 1111111,
-	            hour: 2333333,
-	            project: 5
-	          };
+			$ctrl.achivement = 
+			  { 
+			    age: 24, 
+			    code: 1111111,
+			    hour: 2333333,
+			    project: 5
+			  };
 
-	        $scope.skills =
-	        ['HTML','JavaScript','CSS', 'LESS', 'SCSS', 'PHP', 'Java', 'C', 'Drupal', 'WordPress', 'Angular.js', 'Git', 'Docker'];
+			$ctrl.skills = ['HTML','JavaScript','CSS', 'LESS', 'SCSS', 'PHP', 'Java', 'C', 'Drupal', 'WordPress', 'Angular.js', 'Git', 'Docker'];
 
-	        $scope.newskills = [];
+			$ctrl.newskills = [];
 
-	        $scope.addup1 = function() {
-	          $scope.achivement.age += 1;
-	        };
+			$ctrl.addup1 = function() {
+			  $ctrl.achivement.age += 1;
+			};
 
-	        $scope.addup2 = function() {
-	          $scope.achivement.code += 10;
-	        };
+			$ctrl.addup2 = function() {
+			  $ctrl.achivement.code += 10;
+			};
 
-	        $scope.addup3 = function() {
-	          $scope.achivement.hour += 10;
-	        };
+			$ctrl.addup3 = function() {
+			  $ctrl.achivement.hour += 10;
+			};
 
-	        $scope.addup4 = function() {
-	          $scope.achivement.project += 1;
-	        };
-	        $scope.choose = function(){
-	          // filter out duplicate chosen skills
-	            var temp = $scope.chosen;
-	            temp = temp.filter(function(val) {
-	              return $scope.newskills.indexOf(val) === -1;
-	            });
-	            // console.log(temp);
-	            $scope.newskills = $scope.newskills.concat(temp);
-	        };
+			$ctrl.addup4 = function() {
+			  $ctrl.achivement.project += 1;
+			};
 
-	        this.name = 'Batman';
+			$ctrl.choose = function(){
+			  // filter out duplicate chosen skills
+			    var temp = $ctrl.chosen;
+			    temp = temp.filter(function(val) {
+			      return $ctrl.newskills.indexOf(val) === -1;
+			    });
+			    // console.log(temp);
+			    $ctrl.newskills = $ctrl.newskills.concat(temp);
+			};
 
-       })
-	   .component('hero', {
-		  templateUrl: 'views/main.html',
-		  controller: 'mainController',
-		  bindings: {
-		    name: '='
-		  }
-	    });
+   		},
+    });
 
-
+angular.module('mainApp')
+   .directive('heroChanger', function() {
+   		return {
+   			link: function(scope, element, attr) {
+   				console.log(scope);
+   				console.log(element);
+   				
+   			}
+   		}
+   })
 
 })();
