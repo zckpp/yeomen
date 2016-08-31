@@ -78,7 +78,6 @@ angular.module('mainApp' ,[])
 
 				bar.append("rect")
 				  .attr("width", function(d,i) {
-				  		console.log(d,i,'test');
 				  		return d;
 				  })
 				  .attr("height", barHeight - 1);
@@ -124,7 +123,9 @@ angular.module('mainApp' ,[])
 				  	return "translate(0," + i * barHeight + ")"; });
 
   				bar.select("rect")
-				  .attr("width", 1000000)
+				  .attr("width", function(d,i) {
+				  		return d;
+				  })
 				  .attr("height", barHeight - 1)
 
 				bar.select("text")
@@ -132,11 +133,6 @@ angular.module('mainApp' ,[])
 				  .attr("y", barHeight / 2)
 				  .attr("dy", ".35em")
 				  .text(function(d) { return d; })
-
-console.log(	bar.select("rect"),'rect');
-
-
-
 				  bar.transition();
 
 				function type(d) {
@@ -145,16 +141,8 @@ console.log(	bar.select("rect"),'rect');
 				}
 			}
 
-  			// requestAnimationFrame(Svg);
-
    		},
     });
-
-
-
-
-
-
 
 
 
