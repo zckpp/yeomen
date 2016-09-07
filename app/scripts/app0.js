@@ -29,3 +29,16 @@ angular
       })
        
   });
+
+
+  //Directive
+// angular.module('mainApp')
+//    .directive('heroChanger', function() {
+//        return {
+//          link: function(scope, element, attr) {
+//            console.log(scope);
+//            console.log(element);
+          
+//          }
+//        }
+//    })

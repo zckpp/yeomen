@@ -1,0 +1,32 @@
+<h2>MY SKILLS</h2>
+
+<div class="skillShow">
+  
+  <ul class="Skill list-group">
+    <li ng-repeat="skill in $ctrl.newskills" class="list-group-item">
+      {{skill}}
+    </li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="col-md-2 col-sm-6">
+    <h2>Skills List</h2>
+    <select  multiple ng-model="$ctrl.chosen" ng-options="x for x in $ctrl.skills" class="chooseList"></select>
+  </div> 
+
+  <div class="col-md-2 col-xs-0">
+    <img class="forward" src="images/forward.png">
+  </div> 
+
+  <div class="col-md-3 col-sm-6">
+    <h2>Skills Chosen</h2>
+    <ul class="chosenList list-group">
+      <li ng-repeat="choice in $ctrl.chosen" class="list-group-item">
+        {{choice}}
+      </li>
+    </ul>
+
+    <button ng-click="$ctrl.choose()" class="chooseButton btn btn-primary">Choose</button>
+  </div>
+</div>

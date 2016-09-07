@@ -9,6 +9,7 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -19,12 +20,16 @@
 <body ng-app="mainApp">
   
   <div class="container">
-      <hero hero-changer></hero>
+      <chart></chart>
   </div>
 
   <div class="container">
-    <test-name name="name" address="'asdads'"></test-name> 
+      <skill></skill>
   </div>
+
+<!--   <div class="container">
+    <test-name name="name" address="'asdads'"></test-name> 
+  </div> -->
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
@@ -46,8 +51,8 @@
 
 <!--     <script src="scripts/app.js"></script> --> 
 <script src="https://d3js.org/d3.v3.min.js"></script>  
-    <script src="scripts/comp.js"></script>
-    <script src="scripts/comp1.js"></script>
+<script src="scripts/comp.js"></script>
+<script src="scripts/comp1.js"></script>
     <!-- endbuild -->
 </body>
 </html>

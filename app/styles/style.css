@@ -57,3 +57,12 @@ span{
   font: 10px sans-serif;
   text-anchor: end;
 }
+
+.fa{
+	color: cadetblue;
+}
+
+span{
+	font-family: 'Anton', sans-serif;
+	font-size: 25px;
+}

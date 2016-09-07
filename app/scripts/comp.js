@@ -2,7 +2,7 @@
 
 
 angular.module('mainApp' ,[])
-       .component('hero', {
+       .component('chart', {
 		templateUrl: 'views/main.html',
 		transclude: true,
 		controller:  function ($scope){
@@ -15,46 +15,32 @@ angular.module('mainApp' ,[])
 			    hour: 233,
 			    project: 5
 			  };
-  
- 
-
-			$ctrl.skills = ['HTML','JavaScript','CSS', 'LESS', 'SCSS', 'PHP', 'Java', 'C', 'Drupal', 'WordPress', 'Angular.js', 'Git', 'Docker'];
-
-			$ctrl.newskills = [];
 
 			$ctrl.addup1 = function() {
 			  $ctrl.achivement.age += 1;
-			    Svg();
-		
+			  updateSVG();		
 			};
 
 			$ctrl.addup2 = function() {
 			  $ctrl.achivement.code += 10;
+			  updateSVG();
 			};
 
 			$ctrl.addup3 = function() {
 			  $ctrl.achivement.hour += 10;
+			  updateSVG();
 			};
 
 			$ctrl.addup4 = function() {
 			  $ctrl.achivement.project += 1;
-				updateSVG();
+			  updateSVG();
 			};
 
-			$ctrl.choose = function(){
-			  // filter out duplicate chosen skills
-			    var temp = $ctrl.chosen;
-			    temp = temp.filter(function(val) {
-			      return $ctrl.newskills.indexOf(val) === -1;
-			    });
-			    // console.log(temp);
-			    $ctrl.newskills = $ctrl.newskills.concat(temp);
-			};
-
+			//draw svg
 			var Svg = function(){
 
 				var data = $.map($ctrl.achivement, function(value, index) {
-    			  return [value];
+				  return [value];
 				});
 
 		
@@ -83,12 +69,12 @@ angular.module('mainApp' ,[])
 				  .attr("height", barHeight - 1);
 
 				bar.append("text")
-				  .attr("x", function(d) { return x(d) - 3; })
+				  .attr("x", function(d) { return d; })
 				  .attr("y", barHeight / 2)
 				  .attr("dy", ".35em")
 				  .text(function(d) { return d; })
 
-  		
+			
 				  bar.transition();
 
 				function type(d) {
@@ -98,6 +84,7 @@ angular.module('mainApp' ,[])
 
 			}
 
+			//update svg with new data
 			function updateSVG(){
 				var data = $.map($ctrl.achivement, function(value, index) {
     			  return [value];
@@ -129,7 +116,7 @@ angular.module('mainApp' ,[])
 				  .attr("height", barHeight - 1)
 
 				bar.select("text")
-				  .attr("x", function(d) { return x(d) - 3; })
+				  .attr("x", function(d) { return d; })
 				  .attr("y", barHeight / 2)
 				  .attr("dy", ".35em")
 				  .text(function(d) { return d; })
@@ -141,21 +128,9 @@ angular.module('mainApp' ,[])
 				}
 			}
 
+			Svg();
+
    		},
     });
-
-
-
-
-angular.module('mainApp')
-   .directive('heroChanger', function() {
-   		return {
-   			link: function(scope, element, attr) {
-   				console.log(scope);
-   				console.log(element);
-   				
-   			}
-   		}
-   })
 
 })();
