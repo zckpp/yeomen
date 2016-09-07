@@ -26,8 +26,8 @@
 
 <!-- Stylesheet
     ================================================== -->
-<link rel="stylesheet" type="text/css"  href="css/second.css">
 <link rel="stylesheet" type="text/css"  href="css/style.css">
+<link rel="stylesheet" type="text/css"  href="css/second.css">
 <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
 <link rel="stylesheet" type="text/css" href="fonts/sns_fonts/iconfont.css">
 
@@ -73,71 +73,22 @@ if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1||u.indexOf('iPhone') > 
     <![endif]-->
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" ng-app="mainApp">
-  <!-- Navigation -->
-  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-      <div class="container">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                  <i class="fa fa-bars"></i>
-              </button>
-              <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-terminal"></i>Web Developer</a>
-          </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-              <ul class="nav navbar-nav">
-                  <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                  <li class="hidden">
-                      <a href="#page-top"></a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#services">profile</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#works">project experience</a>
-                  </li>                    
-                  <li>
-                      <a class="page-scroll" href="#about">Skills</a>
-                  </li>                    
-                  <li>
-                      <a class="page-scroll" href="#team">work experience</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#testimonials">self description</a>
-                  </li>                    
-                  <li>
-                      <a class="page-scroll" href="#contact">contact</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="#Applications">Applications</a>
-                  </li>
-              </ul>
-          </div>
-          <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-  </nav>
-
 
   <resume></resume>  
-
-  <div id="Applications">
-    <div class="container">
-      <skill></skill>
-    </div>  
-  </div>
 
   <div class="container">
       <chart></chart>
   </div>
-  <br>
-  <br>
-  <br>
 
+  <div class="container">
+      <skill></skill>
+  </div>
+
+  <button class="change">change view</button>
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
-<!-- <script src="bower_components/jquery/dist/jquery.js"></script> -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -158,14 +109,15 @@ if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1||u.indexOf('iPhone') > 
 <script src="scripts/comp.js"></script>
 <script src="scripts/comp1.js"></script>
 <script src="scripts/comp2.js"></script>
+
+  <script type="text/javascript">
+    $('.change').click(function(){
+      $('chart').slideUp();
+    });
+
+  </script>
 <!-- endbuild -->
 
-<script type="text/javascript">
-  $('.change').click(function() {
-    $( "resume" ).slideUp();
-  
-});
-</script>
 
 </body>
 </html>

@@ -9,16 +9,21 @@
 
 			$ctrl.skills = ['HTML','JavaScript','CSS', 'LESS', 'SCSS', 'PHP', 'Java', 'C', 'Drupal', 'WordPress', 'Angular.js', 'Git', 'Docker'];
 
-			$ctrl.newskills = [];
+			$ctrl.newskills = ['HTML,','JavaScript,','CSS,'];
 
 			$ctrl.choose = function(){
 				// filter out duplicate chosen skills
 				var temp = $ctrl.chosen;
-				var dup = $ctrl.newskills; 
-				temp = temp.filter(function(val) {
-				return dup.indexOf(val) === -1;
+				var chosed = [];
+				temp.forEach(function(item) {
+					item += ',';
+					chosed.push(item);
 				});
-				$ctrl.newskills = $ctrl.newskills.concat(temp);
+				var dup = $ctrl.newskills; 
+				chosed = chosed.filter(function(val) {
+					return dup.indexOf(val) === -1;
+				});
+				$ctrl.newskills = $ctrl.newskills.concat(chosed);
 			};
 		  }
 

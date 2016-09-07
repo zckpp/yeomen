@@ -1,7 +1,3 @@
-.row{
-	display: block;
-}
-
 .Age{
 	display: block;
 }
@@ -16,6 +12,8 @@ span{
 }
 .Skill{
 	padding-top: 15px;
+	font-size: 20px;
+	color: ghostwhite;
 }
 
 .chooseButton{
@@ -30,15 +28,11 @@ span{
 	min-height:150px;
 }
 
-.skillShow{
-	background-color: #F0FFFF;
-	min-height: 50px;
-}
-
 .forward{
     width: 100%;
     height: auto;
     padding-top: 40px;
+    vertical-align: super;
 }
 
 @media screen and (max-width: 993px){
@@ -46,7 +40,6 @@ span{
 		display: none;
 	}
 }
-
 
 .chart rect {
   fill: steelblue;
@@ -56,13 +49,4 @@ span{
   fill: white;
   font: 10px sans-serif;
   text-anchor: end;
-}
-
-.fa{
-	color: cadetblue;
-}
-
-span{
-	font-family: 'Anton', sans-serif;
-	font-size: 25px;
 }
