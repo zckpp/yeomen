@@ -132,5 +132,4 @@ angular.module('mainApp' ,[])
 
    		},
     });
-
 })();
